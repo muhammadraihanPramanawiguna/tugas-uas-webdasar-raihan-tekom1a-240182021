@@ -1,0 +1,222 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #fff8f0;
+    overflow-x: hidden;
+    height: 100%;
+  }
+  
+
+  .navbar {
+    background-color: #ff7f3f;
+    z-index: 10;
+  }
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #fff;
+    margin: 0 auto;
+  }
+  .navbar-nav .nav-link {
+    color: #fff;
+    margin-left: 15px;
+  }
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link.active {
+    color: #ffe08a;
+  }
+
+  .moving-background {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .moving-menu {
+    display: flex;
+    gap: 0;
+    white-space: nowrap;
+    position: absolute;
+    left: 0;
+    z-index: 0;
+  }
+  .moving-menu img {
+    height: 50vh;
+    object-fit: cover;
+    opacity: 0.1;
+  }
+  
+  .moving-menu.atas { top: 0; animation: moveLeft 60s linear infinite; }
+  .moving-menu.bawah { bottom: 0; animation: moveRight 60s linear infinite;  }
+
+  @keyframes moveLeft {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-25%); }
+  }
+  @keyframes moveRight {
+    0%   { transform: translateX(-25%); }
+    100% { transform: translateX(0%); }
+  }
+  
+  @keyframes fadeInMove {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInMove 1s ease-out forwards;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    color: #ff5e00;
+    text-shadow: 0 0 6px #fff;
+    margin-bottom: 20px;
+  }
+  .hero p {
+    font-size: 1.2rem;
+    color: #444;
+    text-shadow: 0 0 4px #fff;
+  }
+
+  .menu-section {
+    padding: 60px 20px;
+    position: relative;
+    z-index: 2;
+  }
+  .menu-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+    opacity: 0;
+    animation: fadeInMove 1s ease forwards;
+    animation-delay: 0.5s;
+  }
+  .card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    color: #333;
+    transition: transform 0.4s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInMove 0.8s ease-out forwards;
+  }
+  .card:hover { transform: translateY(-8px); }
+  .card-img-top {
+    height: 220px;
+    object-fit: cover;
+  }
+  .card-body { text-align: center; }
+  .card-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ff5e00;
+  }
+ 
+  .modal-content {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 3px solid #ff7f3f;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+  }
+  .modal-header {
+    background: #ff7f3f;
+    color: #fff;
+    border-bottom: 2px solid #ffd699;
+  }
+  .modal-body {
+    padding: 20px;
+  }
+  .modal-body .form-section {
+    padding: 20px;
+    border: 2px dashed #ffe0b3;
+    border-radius: 10px;
+    background: #fffaf2;
+    margin-top: 15px;
+  }
+  .modal-body .form-section h5 {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ff5e00;
+  }
+  .form-control, textarea {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+  }
+  .form-control:focus, textarea:focus {
+    border-color: #ff7f3f;
+    box-shadow: 0 0 5px rgba(255,127,63,0.5);
+  }
+  #totalHarga {
+    font-size: 1.3rem;
+    padding: 5px 0;
+    color: #d94d00;
+    border-bottom: 2px dashed #ffb36b;
+  }
+ 
+  .login-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 400px;
+    width: 90%;
+    margin: 20px auto 50px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInMove 1s ease-out forwards;
+    animation-delay: 0.4s;
+  }
+  .login-card h4 {
+    margin-bottom: 20px;
+    color: #ff5e00;
+    font-weight: bold;
+  }
+  .login-card label {
+    font-weight: bold;
+    font-size: 0.95rem;
+  }
+  .login-card .form-control {
+    margin-bottom: 12px;
+  }
+  .login-card button {
+    width: 100%;
+  }
+ 
+  footer {
+    background: #ff7f3f;
+    padding: 25px 0;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .sosmed a {
+    color: #fff; margin: 0 10px; font-size: 24px;
+  }
+  .sosmed a:hover { color: #ffe08a; }
+
+  @media (max-width: 576px) {
+    .hero h1 { font-size: 2.2rem; }
+    .hero p { font-size: 1rem; }
+    .moving-menu img { height: 50vh; }
+    .login-card { padding: 20px; }
+  }
+  
